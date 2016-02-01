@@ -18,6 +18,15 @@ a {
     text-shadow: 0px 0px 10px rgba(70, 153, 255, 0.7);
 }
 
+#about, #projects, #affiliations, #blog {
+    display: none;
+}
+
+nav li{
+    display: inline;
+    padding: 0px 5% 0px 0px;
+}
+
 a:link, a:active, a:visited {
     text-decoration: none
 }
@@ -29,4 +38,27 @@ a:hover {
 img {
     width: 70%;
     height: 40%;
+}
+
+.blinking-cursor {
+    opacity: 0;
+    animation: cursor 1s infinite;
+}
+
+@keyframes cursor {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
