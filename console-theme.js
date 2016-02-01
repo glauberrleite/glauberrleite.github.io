@@ -2,9 +2,29 @@ var terminal = document.getElementById("terminal");
 
 var output = document.getElementById("output");
 
-var navItem = document.querySelectorAll("NAV > ul > li");
+var bottomTerminal = document.getElementById("bottom-terminal");
 
-//var navItem = document.getElementsByTagName("NAV").item(0);
+var navItem = document.querySelectorAll("nav > ul > li > a");
 
-console.log(navItem);
+var path = "~";
+
+var i;
+
+for(i = 0; i < navItem.length; i++){
+
+	navItem[i].onclick = function(){
+		var id = this.href.split("#")[1];
+		
+		var content = document.getElementById(id);
+
+		terminal.innerHTML = "<br>[user@glauberrleite " + path + "] clear && cd ~/" + this.innerHTML;
+		path = "~/" + this.innerHTML;
+		terminal.innerHTML += "<br>[user@glauberrleite " + path + "] ls";
+
+		output.innerHTML = content.innerHTML;
+//		output.style.display = "initial";
+
+		bottomTerminal.innerHTML = "[user@glauberrleite " + path + "]<span class='blinking-cursor'>_</span>";
+	};
+}
 
