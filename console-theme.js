@@ -25,11 +25,10 @@ for(i = 0; i < navItem.length; i++){
 
 		terminal.innerHTML = "<br>[user@glauberrleite " + path + "]$ cd ~/" + this.innerHTML;
 		path = "~/" + this.innerHTML;
-		terminal.innerHTML += "<br>[user@glauberrleite " + path + "]$ ls";
+		terminal.innerHTML += "<br>[user@glauberrleite " + path + "]$ ./"+ id +".sh";
 
 		output.innerHTML = content.innerHTML;
 
 		bottomTerminal.innerHTML = "[user@glauberrleite " + path + "]$ <span class='blinking-cursor'>_</span>";
 	};
 }
-
