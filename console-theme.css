@@ -5,6 +5,11 @@ body {
     font-size: 150%;
 }
 
+hr {
+    border: 0;
+    border-bottom: medium dashed white;
+}
+
 h1 {
     font-size: 250%;
 }

@@ -1,3 +1,24 @@
+/**
+ * 
+ * @author: glauberrleite
+ * 
+ * Inspiration for this code was taken from:
+ * 
+ * https://www.developphp.com/video/JavaScript/Typing-Text-Animation-Tutorial-Array-Loop-Programming
+ * http://stackoverflow.com/questions/8860188/is-there-a-way-to-clear-all-time-outs
+ * 
+ */
+
+// Constants
+const HOST = "glauberrleite";
+const USER = "user";
+
+// To avoid typing repetition the bash info
+var bashInfo = function(path){
+    return "[" + USER + "@" + HOST + " " + path + "]$ ";
+}
+
+// Getting elements
 var terminal = document.getElementById("terminal");
 
 var output = document.getElementById("output");
@@ -8,27 +29,95 @@ var topTerminal = document.getElementById("top-terminal");
 
 var navItem = document.querySelectorAll("nav > ul > li > a");
 
+// Setting initial values
 var path = "~";
 
+topTerminal.innerHTML = bashInfo(path) + "ls";
+
+terminal.innerHTML = bashInfo(path) + "<span class='blinking-cursor'>_</span>";
+
+// Functions to clean things
+var clearAllTimeouts = function(){
+    var id = window.setTimeout(function() {}, 0);
+
+    while (id--) {
+        window.clearTimeout(id); // will do nothing if no timeout with id is present
+    }
+}
+
+var cleanTerminal = function(){    
+    
+        output.innerHTML = "";
+        bottomTerminal.innerHTML = "";
+        
+        clearAllTimeouts();
+}
+
+// Show section when clicked
 var i;
 
-topTerminal.innerHTML = "[user@glauberrleite " + path + "]$ ls";
-
-terminal.innerHTML = "[user@glauberrleite " + path + "]$ <span class='blinking-cursor'>_</span>";
-
 for(i = 0; i < navItem.length; i++){
-
+    
 	navItem[i].onclick = function(){
-		var id = this.href.split("#")[1];
+            
+            cleanTerminal();
+        
+            var animatedText;
+            var textArray;
+            var loopTimer;
+        
+            var itemName = this.innerHTML;
+            
+            var id = this.href.split("#")[1];
 
-		var content = document.getElementById(id);
+            var content = document.getElementById(id);
 
-		terminal.innerHTML = "<br>[user@glauberrleite " + path + "]$ cd ~/" + this.innerHTML;
-		path = "~/" + this.innerHTML;
-		terminal.innerHTML += "<br>[user@glauberrleite " + path + "]$ ./"+ id +".sh";
+            terminal.innerHTML = bashInfo(path);                
+            animatedText = "cd ~/" + itemName;
+            textArray = animatedText.split("");
+                                
+            var terminalWriter = function(nextFunction) {
 
-		output.innerHTML = content.innerHTML;
+                if(textArray.length > 0) {
+                
+                    terminal.innerHTML += textArray.shift();
+                
+                } else {
+                    
+                    clearTimeout(loopTimer);
+                                            
+                    nextFunction();
+                    
+                    return false;
+                } 
+                
+                    
+                loopTimer = setTimeout(function(){ terminalWriter(nextFunction); }, 30);
 
-		bottomTerminal.innerHTML = "[user@glauberrleite " + path + "]$ <span class='blinking-cursor'>_</span>";
-	};
+            }
+            
+            var continueCode = function() {
+                // Change path
+                path = "~/" + itemName;
+                
+                terminal.innerHTML += "<br>" + bashInfo(path);
+                
+                animatedText = "./"+ id +".sh";
+                textArray = animatedText.split("");
+                
+                
+
+                var continueCode2 = function(){
+                    output.innerHTML = content.innerHTML;
+
+                    bottomTerminal.innerHTML = bashInfo(path) + "<span class='blinking-cursor'>_</span>";
+                }
+                
+                terminalWriter(continueCode2);
+            }
+            
+            // starts animation and go to the next portion of the code
+            terminalWriter(continueCode);
+            
+        }
 }
