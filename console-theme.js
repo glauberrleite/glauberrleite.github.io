@@ -21,8 +21,6 @@ var bashInfo = function(path){
 // Getting elements
 var terminal = document.getElementById("terminal");
 
-var output = document.getElementById("output");
-
 var bottomTerminal = document.getElementById("bottom-terminal");
 
 var topTerminal = document.getElementById("top-terminal");
@@ -34,9 +32,9 @@ var path = "~";
 
 topTerminal.innerHTML = bashInfo(path) + "ls";
 
-terminal.innerHTML = bashInfo(path) + "<span class='blinking-cursor'>_</span>";
+terminal.innerHTML = bashInfo(path) + "<span class='blinking_cursor'>_</span>";
 
-// Functions to clean things
+// Functions to clean and hide things
 var clearAllTimeouts = function(){
     var id = window.setTimeout(function() {}, 0);
 
@@ -47,10 +45,20 @@ var clearAllTimeouts = function(){
 
 var cleanTerminal = function(){    
     
-        output.innerHTML = "";
         bottomTerminal.innerHTML = "";
         
         clearAllTimeouts();
+}
+
+var hideAllSections = function(){
+    var i;
+    
+    for (i = 0; i < navItem.length; i++){
+        var id = navItem[i].href.split("#")[1];
+        var content = document.getElementById(id);
+        
+        content.style.display = "none";
+    }
 }
 
 // Show section when clicked
@@ -58,66 +66,68 @@ var i;
 
 for(i = 0; i < navItem.length; i++){
     
-	navItem[i].onclick = function(){
-            
-            cleanTerminal();
+    navItem[i].onclick = function(){
         
-            var animatedText;
-            var textArray;
-            var loopTimer;
+        cleanTerminal();
+    
+        var animatedText;
+        var textArray;
+        var loopTimer;
+    
+        var itemName = this.innerHTML;
         
-            var itemName = this.innerHTML;
+        var id = this.href.split("#")[1];
+
+        var content = document.getElementById(id);
+
+        terminal.innerHTML = bashInfo(path);                
+        animatedText = "cd ~/" + itemName;
+        textArray = animatedText.split("");
+                            
+        var terminalWriter = function(nextFunction) {
+
+            if(textArray.length > 0) {
             
-            var id = this.href.split("#")[1];
-
-            var content = document.getElementById(id);
-
-            terminal.innerHTML = bashInfo(path);                
-            animatedText = "cd ~/" + itemName;
-            textArray = animatedText.split("");
-                                
-            var terminalWriter = function(nextFunction) {
-
-                if(textArray.length > 0) {
-                
-                    terminal.innerHTML += textArray.shift();
-                
-                } else {
-                    
-                    clearTimeout(loopTimer);
-                                            
-                    nextFunction();
-                    
-                    return false;
-                } 
-                
-                    
-                loopTimer = setTimeout(function(){ terminalWriter(nextFunction); }, 30);
-
-            }
+                terminal.innerHTML += textArray.shift();
             
-            var continueCode = function() {
-                // Change path
-                path = "~/" + itemName;
+            } else {
                 
-                terminal.innerHTML += "<br>" + bashInfo(path);
+                clearTimeout(loopTimer);
+                                        
+                nextFunction();
                 
-                animatedText = "./"+ id +".sh";
-                textArray = animatedText.split("");
-                
-                
-
-                var continueCode2 = function(){
-                    output.innerHTML = content.innerHTML;
-
-                    bottomTerminal.innerHTML = bashInfo(path) + "<span class='blinking-cursor'>_</span>";
-                }
-                
-                terminalWriter(continueCode2);
-            }
+                return false;
+            } 
             
-            // starts animation and go to the next portion of the code
-            terminalWriter(continueCode);
-            
+                
+            loopTimer = setTimeout(function(){ terminalWriter(nextFunction); }, 30);
+
         }
+        
+        var continueCode = function() {
+            // Change path
+            path = "~/" + itemName;
+            
+            terminal.innerHTML += "<br>" + bashInfo(path);
+            
+            animatedText = "./"+ id +".sh";
+            textArray = animatedText.split("");
+            
+            
+
+            var continueCode2 = function(){
+                hideAllSections();
+                
+                content.style.display = "initial";
+
+                bottomTerminal.innerHTML = bashInfo(path) + "<span class='blinking_cursor'>_</span>";
+            }
+            
+            terminalWriter(continueCode2);
+        }
+        
+        // starts animation and go to the next portion of the code
+        terminalWriter(continueCode);
+        
+    }
 }

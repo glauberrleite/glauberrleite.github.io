@@ -31,9 +31,9 @@ a {
     display: none;
 }
 
-nav li{
+nav li, .blog_years li{
     display: inline;
-    padding: 0px 5% 0px 0px;
+    padding-right: 5%;
 }
 
 a:link, a:active, a:visited {
@@ -44,12 +44,12 @@ a:hover {
     text-decoration: underline;
 }
 
-img {
+#about figure img{
     width: 70%;
     height: 40%;
 }
 
-.blinking-cursor {
+.blinking_cursor {
     opacity: 0;
     animation: cursor 1s infinite;
 }
