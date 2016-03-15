@@ -125,9 +125,23 @@ for(i = 0; i < navItem.length; i++){
             
             terminalWriter(continueCode2);
         }
-        
         // starts animation and go to the next portion of the code
         terminalWriter(continueCode);
-        
+
     }
+}
+
+// Trigger animation if URL already comes with ID
+// Important for external references
+var urlHash = window.location.hash.split("#");
+
+if (urlHash.length > 1){
+
+	for(i = 0; i < navItem.length; i++)
+		if(urlHash[1] == navItem[i].href.split("#")[1]){
+
+			navItem[i].onclick();
+
+		}
+
 }
