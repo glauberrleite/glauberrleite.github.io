@@ -27,11 +27,19 @@ a {
     text-shadow: 0px 0px 10px rgba(70, 153, 255, 0.7);
 }
 
-#about, #projects, #affiliations, #blog {
+#about, #projects, #affiliations, #works, #contact {
     display: none;
 }
 
-nav li, .blog_years li{
+article {
+    border-style: dashed;
+    border-size: 2px;
+    border-color: white;
+    padding: 0% 2% 2% 2%;
+    margin-bottom: 2%;
+}
+
+nav li {
     display: inline;
     padding-right: 5%;
 }
