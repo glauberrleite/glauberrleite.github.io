@@ -32,10 +32,10 @@ a {
 }
 
 article {
-    border-style: dashed;
+    border-style: none none none dashed;
     border-size: 2px;
     border-color: white;
-    padding: 0% 2% 2% 2%;
+    padding: 0% 2% 0% 2%;
     margin-bottom: 2%;
 }
 
