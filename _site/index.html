@@ -1,7 +1,42 @@
----
-layout: default
----
-<main>
+<!DOCTYPE html>
+<html>
+
+  <head>
+        <meta charset="UTF-8">
+        <title>glauberrleite-dev</title>
+        <link rel="icon" type="image/x-icon" href="http://glauberrleite.github.io/pictures/favicon.ico"></link>
+        <link rel="stylesheet" type="text/css" href="http://glauberrleite.github.io/console-theme.css"></link>
+</head>
+
+  <body>
+
+    <header>
+        <h1>glauberrleite-dev</h1>
+
+        <h3>An old-fashioned developer looking for new horizons, and keeping what is good (or at least nostalgic) from the past</h2>
+    
+        <hr>
+
+	  <div id="top-terminal"></div>
+
+        <nav>
+            <ul>
+                <li><a href="http://glauberrleite.github.io#about" target="_self">About</a></li>
+                <li><a href="http://glauberrleite.github.io#projects" target="_self">Projects</a></li>
+		    <li><a href="http://glauberrleite.github.io#works" target="_self">Works</a></li>
+                <li><a href="http://glauberrleite.github.io#blog" target="_self">Blog</a></li>
+                <li><a href="http://glauberrleite.github.io#affiliations" target="_self">Affiliations</a></li>
+		    <li><a href="http://glauberrleite.github.io#contact" target="_self">Contact</a></li>
+            </ul>
+        </nav>
+
+</header>
+    
+    <hr>
+
+    <div class="page-content">
+            <div class="wrapper">
+                    <main>
 
 <div id="terminal"></div>
 
@@ -114,18 +149,18 @@ layout: default
                         <h2 class="page-heading">Blog Posts</h1>
                          
                         <ul class="post-list">
-                        {% for post in site.posts %}
+                        
                         <li>
-                                <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+                                <span class="post-meta">Apr 24, 2016</span>
                                  
                                 <h3>
-                                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                                <a class="post-link" href="/misc/2016/04/24/first-post.html">First Post</a>
                                 </h3>
                         </li>
-                        {% endfor %}
+                        
                         </ul>
                          
-                        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>                
+                        <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>                
                 </div>
                  
                 
@@ -187,3 +222,18 @@ layout: default
         <div id="bottom-terminal"></div>
 
 </main>
+
+            </div>
+    </div>
+
+    <hr>
+     
+    <footer>
+        <p>glauberrleite. 2016</p>
+        <p>Contact: <a href="mailto:grl@ic.ufal.br">grl@ic.ufal.br</a></p>
+       
+        <script src="http://glauberrleite.github.io/console-theme.js"></script>
+</footer>
+  </body>
+
+</html>
