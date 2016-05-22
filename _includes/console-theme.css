@@ -52,7 +52,8 @@ a:hover {
     text-decoration: underline;
 }
 
-span.undecorate {
+a.undecorated, a.undecorated:link, a.undecorated:active,
+a.undecorated:visited, a.undecorated:hover {
 	text-decoration: none;
 	color: lime;
 	text-shadow: none;
