@@ -3,6 +3,7 @@ layout: post
 title:  "Building a computer"
 date:	2016-04-29 18:00:00 -0300
 categories: building-a-computer
+leadingpath: ../../../../
 ---
 As said in the About section of this site, I'm studying Computer Engineering. Many people say that _one_ of the course's goal is to provide to an individual the possibility of understand how a computer works and even build one kind of that. (see the course program). (see if people have done this yet).
 
