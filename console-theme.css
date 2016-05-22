@@ -52,6 +52,12 @@ a:hover {
     text-decoration: underline;
 }
 
+span.undecorate {
+	text-decoration: none;
+	color: lime;
+	text-shadow: none;
+}
+
 #about figure img{
     width: 70%;
     height: 40%;
