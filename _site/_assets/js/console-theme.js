@@ -59,6 +59,8 @@ var hideAllSections = function(){
         
         content.style.display = "none";
     }
+
+    document.getElementById("latest").style.display = "none";
 }
 
 // Show section when clicked

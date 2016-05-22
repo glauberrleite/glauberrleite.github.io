@@ -27,7 +27,11 @@ a {
     text-shadow: 0px 0px 10px rgba(70, 153, 255, 0.7);
 }
 
-#about, #projects, #affiliations, #works, #contact, #blog {
+#latest {
+    display: visible;
+}
+
+#about, #projects, #affiliations, #works, #contact, #archive {
     display: none;
 }
 
@@ -85,4 +89,16 @@ a.undecorated:visited, a.undecorated:hover {
     100% {
         opacity: 0;
     }
+}
+
+.post-meta {
+}
+
+.post-title {
+}
+
+.post-abstract {
+}
+
+.post-date {
 }

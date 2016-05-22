@@ -6,6 +6,27 @@ leadingpath: ./
 
 <div id="terminal"></div>
 
+	<section id="latest">
+
+	<!-- Blogging using Jekyll -->
+                <div class="home">
+                        <h2 class="page-heading">Latest Posts</h2>
+
+                        {% for post in site.posts %}
+			<h3 class="post-title">{{ post.title }}</h3>
+
+			<p class="post-abstract">{{ post.abstract }} <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Read More</a></p>
+
+			<span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+                        {% endfor %}
+                        </ul>
+
+             	</div>
+
+
+	</section>
+
         <section id="about">
         
                 <h2>About me</h2>
@@ -108,25 +129,21 @@ leadingpath: ./
                 
         </section>
         
-        <section id="blog">
+        <section id="archive">
          
                 <!-- Blogging using Jekyll -->
                 <div class="home">
-                        <h2 class="page-heading">Blog Posts</h2>
+                        <h2 class="page-heading">Blog Archive</h2>
                          
                         <ul class="post-list">
                         {% for post in site.posts %}
                         <li>
-                                <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-                                 
-                                <h3>
-                                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                                </h3>
+                                <span class="post-meta">({{ post.date | date: "%Y-%m-%d" }}) <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span>
                         </li>
                         {% endfor %}
                         </ul>
                          
-                        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>                
+                        <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
                 </div>
                  
                 
