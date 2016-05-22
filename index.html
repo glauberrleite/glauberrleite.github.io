@@ -12,13 +12,14 @@ leadingpath: ./
                 <div class="home">
                         <h2 class="page-heading">Latest Posts</h2>
 
-                        {% for post in site.posts %}
-			<h3 class="post-title">{{ post.title }}</h3>
+                        {% for post in site.posts limit:3 %}
+			<article>
+				<h3 class="post-title">{{ post.title }}</h3>
 
-			<p class="post-abstract">{{ post.abstract }} <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Read More</a></p>
+				<p class="post-abstract">{{ post.abstract }} <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Read More</a></p>
 
-			<span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-
+				<span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+			</article>
                         {% endfor %}
                         </ul>
 
@@ -142,8 +143,7 @@ leadingpath: ./
                         </li>
                         {% endfor %}
                         </ul>
-                         
-                        <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
                 </div>
                  
                 

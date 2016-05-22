@@ -27,6 +27,7 @@ var topTerminal = document.getElementById("top-terminal");
 
 var navItem = document.querySelectorAll("nav > ul > li > a");
 
+
 // Setting initial values
 var path = "~";
 
@@ -50,17 +51,20 @@ var cleanTerminal = function(){
         clearAllTimeouts();
 }
 
+
 var hideAllSections = function(){
     var i;
     
     for (i = 0; i < navItem.length; i++){
+
+	var id;
+
+	// Check if the item is an a or a section element
         var id = navItem[i].href.split("#")[1];
         var content = document.getElementById(id);
         
         content.style.display = "none";
     }
-
-    document.getElementById("latest").style.display = "none";
 }
 
 // Show section when clicked
@@ -75,10 +79,10 @@ for(i = 0; i < navItem.length; i++){
         var animatedText;
         var textArray;
         var loopTimer;
-    
+ 
         var itemName = this.innerHTML;
         
-        var id = this.href.split("#")[1];
+	var id = this.href.split("#")[1];
 
         var content = document.getElementById(id);
 
@@ -133,7 +137,7 @@ for(i = 0; i < navItem.length; i++){
     }
 }
 
-// Trigger animation if URL already comes with ID
+// Trigger animation if URL already comes with ID, else show latest posts
 // Important for external references
 var urlHash = window.location.hash.split("#");
 
@@ -146,4 +150,9 @@ if (urlHash.length > 1){
 
 		}
 
+} else{
+	
+	navItem[0].onclick();
+
 }
+
