@@ -4,7 +4,6 @@ title:  "First Post"
 date:   2016-04-24 21:00:00 -0300
 categories: misc
 abstract: "Telling a little about the blog."
-leadingpath: ../../../../
 ---
 Today I added a new functionality to this website, a blog. The blogging feature was built with [Jekyll](http://jekyllrb.com/), a good tool for blogware static sites that was recommended by Github itself for my 
 page.
