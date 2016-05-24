@@ -1,5 +1,5 @@
 <header>
-        <h1><a href="{{ site.url }}" target="_self" class="undecorated">
+        <h1><a href="{{ site.layoutVars[page.layout].relativepath }}" target="_self" class="undecorated">
 		{{ site.title }}
 	</a></h1>
 
@@ -11,13 +11,13 @@
 
         <nav>
             <ul>
-		<li class="invisible"><a href="{{ page.leadingpath }}#latest">Latest_Posts</a></li>
-		<li><a href="{{ page.leadingpath }}#about" target="_self">About</a></li>
-                <li><a href="{{ page.leadingpath }}#projects" target="_self">Projects</a></li>
-		<li><a href="{{ page.leadingpath }}#works" target="_self">Works</a></li>
-                <li><a href="{{ page.leadingpath }}#affiliations" target="_self">Affiliations</a></li>
-		<li><a href="{{ page.leadingpath }}#contact" target="_self">Contact</a></li>
-		<li><a href="{{ page.leadingpath }}#archive" target="_self">Archive</a></li>
+		<li class="invisible"><a href="{{ site.layoutVars[page.layout].relativepath }}#latest">Latest_Posts</a></li>
+		<li><a href="{{ site.layoutVars[page.layout].relativepath }}#about" target="_self">About</a></li>
+                <li><a href="{{ site.layoutVars[page.layout].relativepath }}#projects" target="_self">Projects</a></li>
+		<li><a href="{{ site.layoutVars[page.layout].relativepath }}#works" target="_self">Works</a></li>
+                <li><a href="{{ site.layoutVars[page.layout].relativepath }}#affiliations" target="_self">Affiliations</a></li>
+		<li><a href="{{ site.layoutVars[page.layout].relativepath }}#contact" target="_self">Contact</a></li>
+		<li><a href="{{ site.layoutVars[page.layout].relativepath }}#archive" target="_self">Archive</a></li>
             </ul>
         </nav>
 

@@ -17,5 +17,11 @@ github_username:  glauberrleite
 include:
 - _assets
 
+layoutVars:
+    default:
+        relativepath: "./"
+    post:
+        relativepath: "../../../../"
+
 # Build settings
 markdown: kramdown
