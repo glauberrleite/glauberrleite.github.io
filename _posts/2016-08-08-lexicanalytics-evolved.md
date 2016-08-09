@@ -3,7 +3,7 @@ layout: post
 title:  "Lexicanalytics evolved"
 date:   2016-08-08 22:30:00 -0300
 categories: news
-abstract: "Lexicanalytics became a great project, and now reached version 2.0. The release announcement gives an overview for most functionalities that users may notice, but there are some developing aspects that can not go unnoticed, neither unpublished."
+abstract: "Lexicanalytics became a great project, and now reached version 2.0. The release announcement gives an overview for most functionalities that users may notice, but there are some developing aspects that can not go unnoticed, neither unpublished. Now the software is being delivered to some researchers to test and give feedback about usage."
 ---
 [Lexicanalytics](https://github.com/glauberrleite/lexicanalytics) have reached the version 2.0. It's beautiful to see how this project evolved and I learned quite new things developing this new version. The JavaFX framework delivers some cool things natively that I was not aware how to deal when working with Swing in older projects, like some controls and charts, aside the pretty Modena theme used by default. It really strange how most of my colleagues work with Java but are unaware of this framework.
 
