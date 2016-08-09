@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "Lexicanalytics evolved"
+date:   2016-08-08 22:30:00 -0300
+categories: news
+abstract: "Lexicanalytics became a great project, and now reached version 2.0. The release announcement gives an overview for most functionalities that users may notice, but there are some developing aspects that can not go unnoticed, neither unpublished."
+---
+[Lexicanalytics](https://github.com/glauberrleite/lexicanalytics) have reached the version 2.0. It's beautiful to see how this project evolved and I learned quite new things developing this new version. The JavaFX framework delivers some cool things natively that I was not aware how to deal when working with Swing in older projects, like some controls and charts, aside the pretty Modena theme used by default. It really strange how most of my colleagues work with Java but are unaware of this framework.
+
+The Lexicanalytics 2 came with a expanded purpose compared with its predecessor. While v1.1 worked with single text analysis, the v2.0 deals with multiple texts, offering more statistical possibilities. Some time ago I posted some thoughts about the functionalities for this new version, where most of them were really implemented, some with changes, others exactly equal. 
+
+The [release announcement](http://github.com/glauberrleite/lexicanalytics/releases/tag/v2.0) gives an overview of the new functionalities. In the developer side of changes I'd like to emphasis the Javadoc writting for most of the methods. As the applicationwas developed to be free software, it is interesting that people understand the code, so the Javadoc became a great priority. The project makes use of some techniques that may be interesting for new students entering in object oriented programming, like polymorphism, abstract classes and so on.
+
+At first I planned to develop a 'save report to pdf' if the release becomes considerable bigger, but the result surprised me with less than 1 MB size, which made me abandon the idea of using a pdf lib. The lib I was planning to use ([iText](http://itextpdf.com)) would raise the projects size very much comparated to its current size. So, until I (or some good soul) find a way to export a report to pdf without raising the projects to more than 500% its size for just one more, and not so important right now, function, Lexicanalytics will continue to save reports in the lightweight text file extension.
+
+R based graphs were planned in that anterior post too, even a lib was discovered to work this. However, JavaFX itself has support for basic types of graphs which may suffice for our actual purposes. Besides, JavaFX graphs works very good with a JavaFX based application using JavaFX controls and container. Those graphs are working pretty smoothly using this approach. Maybe someday, when usability rules change the JRI API may be revisited.
+
+Now that the software is handling multiple Production object instances, a Data Access Object was implemented to deal with persistence, even though we need only a temporary place to store productions, using a DAO makes things more abstract, organized and easier to evolve to new implementations. Right now a ArrayList based implementation is the only one to implement the DAO.
+
+Another thing that may be a lesser change, but gave quite the impact is the fact that the occurrences maps are now instantiated as LinkedHashMaps instead of HashMaps. The reason is simple, Maps structures are now designed to be ordered, although I used a method to sort the occurrences map. For some reason, the maps have not be shown sorted when processing multiple texts. I realized that the HashMap implementation doesn't works with order, because Map data structure does not mind it. However LinkedHashMaps are designed exclusively to keep order in a Map data structure, and when I changed the implementation things worked flawlessly.
+
+With this new version, I'm giving Lexicanalytics to researchers that are working with the early version to test it and give feedback. I know that some may feel that the amount of fuctions are unnecessary for their purposes, then I'm going to keep the first version (v1.1) easily available to download too, as the core Analyzer methods are the same. I'll take the hiatus until the eventual bugs become dicovered to develop a new project and develop the Lexicanalytics website that I already put on the Help Frame of the application. The site will be accessible through [http://projects.glauberrleite.com/lexicanalytics](http://projects.glauberrleite.com/lexicanalytics) or something like it.
