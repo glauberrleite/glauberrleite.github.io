@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Lexicanalytics evolved"
-date:   2016-08-09 22:30:00 -0300
+date:   2016-08-08 19:30:00 -0300
 categories: news
 abstract: "Lexicanalytics became a great project, and now reached version 2.0. The release announcement gives an overview for most functionalities that users may notice, but there are some developing aspects that can not go unnoticed, neither unpublished. Now the software is being delivered to some researchers to test and give feedback about usage."
 ---
