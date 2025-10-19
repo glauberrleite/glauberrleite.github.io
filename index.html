@@ -4,158 +4,203 @@ leadingpath: ./
 ---
 <main>
 
-<div id="terminal"></div>
+  <div id="terminal"></div>
 
 	<section id="latest">
-
 	<!-- Blogging using Jekyll -->
-                <div class="home">
-                        <h2 class="page-heading">Latest Posts</h2>
+    <div class="home">
+      <h2 class="page-heading">Latest Posts</h2>
+      {% for post in site.posts limit:3 %}
+			  <article>
 
-                        {% for post in site.posts limit:3 %}
-			<article>
-				<h3 class="post-title">{{ post.title }}</h3>
+				  <h3 class="post-title">{{ post.title }}</h3>
+				  <p class="post-abstract">{{ post.abstract }} <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Read More</a></p>
+				  <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-				<p class="post-abstract">{{ post.abstract }} <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Read More</a></p>
+			  </article>
+      {% endfor %}
+    </div>
+  </section>
 
-				<span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-			</article>
-                        {% endfor %}
+  <section id="about">
 
-             	</div>
+    <h2>About me</h2>
+    <figure>
+      <img src="{{ page.leadingpath }}_assets/pictures/me_qzyrk_asc.png" alt="A picture of me in ASCII" />
+      <figcaption>A portrait of me and Qzyrk</figcaption>
+    </figure>
 
+    <article>
 
-	</section>
+      <h3>Getting it brief</h3>
+      <p>I'm a Computer Engineering. These are my main development interests:</p>
+      <ul>
+        <li>Robot autonomy algorithms</li>
+        <li><a href="#research">Academic research</a></li>
+        <li>Free and Open Source Software</li>
+        <li>Music software/engineering</li>
+      </ul>
 
-        <section id="about">
+      <p>Programming languages that I work the most:</p>
+      <ol>
+        <li>C++</li>
+        <li>Python</li>
+        <li>Javascript</li>
+        <li>Rust (starting...)</li>
+      </ol>
 
-                <h2>About me</h2>
+      <p>Technologies that I'm using:</p>
+      <ul>
+        <li><a href="https://www.ros.org/" target="_blank">ROS(2)</a></li>
+        <li><a href="https://mqtt.org/" target="_blank">MQTT</a></li>
+        <li><a href="https://www.coppeliarobotics.com/" target="_blank">Coppelia Simulator</a></li>
+      </ul>
 
-                <figure>
-                        <img src="{{ page.leadingpath }}_assets/pictures/me_qzyrk_asc.png" alt="A picture of me in ASCII">
-                        <figcaption>A portrait of me and Qzyrk</figcaption>
-                </figure>
+    </article>
 
-                <article>
+    <article>
+      <h3>For the curious</h3>
 
-                        <h3>Getting it brief</h3>
+      <p>I made this page focused in development and technologies,
+        so I'll not describe a complete (which means life phylosophy,
+        personal opinions, politics, arts) bio about me here. I am an
+        <a href="https://sigaa.sig.ufal.br/sigaa/public/docente/portal.jsf?siape=3817637" target="_blank">university professor</a> 
+        offering lessons for Computer Enginnering 
+        and Computer Science courses. My main research focus are robot
+        autonomy through unstructured environments, a.k.a. field robotics, 
+        visual servoing and model predictive control. I made this page when
+        I was an undergraduate student and only had time to return posting
+        after completion of the PhD degree. So here I am again.
+      </p>
+    </article>
+  
+    <h2>Contact</h2>
+      <p>Email</p>
+      <ul>
+        <li><a href="mailto:glauber@ic.ufal.br">glauber@ic.ufal.br</a></li>
+      </ul>
+      
+      <p>Network Profiles</p>
+      <ul>
+        <li><a href="https://github.com/glauberrleite" target="_blank">GitHub</a></li>
+        <li><a href="https://www.youtube.com/channel/UCfVvgIezXY7WVvIdCqLU13w" target="_blank">Youtube Channel</a></li>
+        <li><a href="https://br.linkedin.com/in/glauber-rodrigues-leite-b3795752" target="_blank">LinkedIn</a></li>
+        <li><a href="https://sigaa.sig.ufal.br/sigaa/public/docente/portal.jsf?siape=3817637" target="_blank">University Page</a></li>
+      </ul>
+  
+  </section>
 
-                        <p>I'm a Computer Engineering. These are my
-                        main development interests:</p>
+  <section id="teaching">
+    
+    <h2>Teaching</h2>
 
-                        <ul>
-                                <li>Robot autonomy algorithms</li>
-                                <li>Academic Projects</li>
-                                <li>Free and Open Source Software</li>
-                                <li>Music software/engineering</li>
-                        </ul>
+    <p>
+    Teaching resources (after all, I'm a university teacher). Since most classes are in Portuguese, 
+    the respective pages are in Brazilian Portuguese. ECOM and CCOM classes are for undergraduation courses, while 
+    PPGI classes are for the post-graduate public.
+    </p>
 
-                        <p>Programming languages that I work the most:</p>
+    <ul id="disciplines">
+      <li><a>ECOM062 - Robótica (Robotics)</a></li>
+      <li><a>ECOM140 - Navegação de Robôs (Robot Navigation)</a></li>
+      <li><a>ECOM011 - Álgebra Linear (Linear Algebra)</a></li>
+      <li><a>PPGI065 - Sistemas de Controle Inteligente (Intelligent Control Systems)</a></li>
+      <li><a>PPGI008 - Inteligência Artificial (Artificial Intelligence)</a></li>
+    </ul>
 
-                        <ol>
-                                <li>C++</li>
-                                <li>Python</li>
-                                <li>Javascript</li>
-                                <li>Rust (starting...)</li>
-                        </ol>
+  </section>
 
-                        <p>Technologies that I'm using:</p>
+  <section id="highlights">
 
-                        <ul>
-                                <li><a href="https://www.ros.org/" target="_blank">ROS(2)</a></li>
-                                <li><a href="https://mqtt.org/" target="_blank">MQTT</a></li>
-                                <li><a href="https://www.coppeliarobotics.com/" target="_blank">Coppelia Simulator</a></li>
-                        </ul>
+    <h2>Highlights</h2>
 
-                </article>
+    <article>
+      <h3>Robot Simulations</h3>
 
-                <article>
-                        <h3>For the curious</h3>
+      <p>A set of robot simulations used in robotics classes. I designed most simulation scenarios in 
+      <a href="https://coppeliarobotics.com/">CoppeliaSim</a> which provides multiplatform binaries (Windows, Linux and MacOs) and 
+      a good, complete, and self contained education version. While most code is running in CoppeliaSim's self-contained 
+      environment, some code may be using ROS2 or MATLAB.
+      </p>
+      <ul>
+        <!-- <li>Latest Release</li> -->
+        <li><a href="https://github.com/glauberrleite/robot-simulations" target="_blank">GitHub</a></li>
+      </ul>
+    </article>
 
-                        <p>I made this page focused in development and technologies,
-                        so I'll not describe a complete (which means life phylosophy,
-                        personal opinions, politics, arts) bio about me here. I am an
-                        university professor offering lessons for Computer Enginnering 
-                        and Computer Science courses. My main research focus are robot
-                        autonomy through unstructured environments, a.k.a. field robotics, 
-                        visual servoing and model predictive control. I made this page when
-                        I was an undergraduate student and only had time to return posting
-                        after completion of the PhD degree. So here I am again.</p>
-               </article>
+    <article>
+      <h3>RAMOS Ink</h3>
+      
+      <p>Converts InkML files received from a Livescribe Smartpen's
+        penlet to image and/or video. RAMOS Ink was build from a
+        research in the Center of Excellence for Social Technologies
+        (NEES). The application is part of a bigger software called RAMOS,
+        which have a more complete set of features to aid researchers
+        in Brazil to study writing processes in real-time.
+      </p>
 
-        </section>
+      <ul>
+        <!-- <li>Latest Release</li> -->
+        <li><a href="https://github.com/glauberrleite/ramos-ink" target="_blank">GitHub</a></li>
+      </ul>
+    </article>
 
-        <section id="highlights">
+    <article>
+    
+      <h3>Lexicanalytics</h3>
 
-                <h2>Highlights</h2>
+      <p>Lexicanalytics offers a set of functionalities to help
+        linguistics researchers with lexical studies, when they are
+        manipulating and retrieving information from text data.
+      </p>
 
-		<article>
-                        <h3>Iris Classifier</h3>
+      <ul>
+			  <li><a href="https://github.com/glauberrleite/lexicanalytics/releases/download/v2.0/lexicanalytics2.zip">Latest Release</a></li>
+        <li><a href="https://github.com/glauberrleite/lexicanalytics/releases/download/v1.1/lexicanalytics1.1.zip">Version 1.1</a></li>
+        <li><a href="https://github.com/glauberrleite/lexicanalytics" target="_blank">GitHub</a></li>
+      </ul>
+    
+    </article>
 
-                        <p>An iris plant classification software based on Marchine Learning.
-													It reads a Iris plant database and classificates entries
-													based on some training in that database. It's currently working
-													with MLP and KNN algoritms. My goal is that someone who is studying
-													supervised learning could read or run this project and
-													clarify the concepts as they are used in pratice.</p>
-                        <ul>
-                                <!-- <li>Latest Release</li> -->
-                                <li><a href="https://github.com/glauberrleite/iris-classifier" target="_blank">GitHub</a></li>
-                        </ul>
-                </article>
+  </section>
 
-                <article>
-                        <h3>RAMOS Ink</h3>
+  <section id="research">
+  
+    <h2>Research</h2>
 
-                        <p>Converts InkML files received from a Livescribe Smartpen's
-                        penlet to image and/or video. RAMOS Ink was build from a
-                        research in the Center of Excellence for Social Technologies
-                        (NEES). The application is part of a bigger software called RAMOS,
-                        which have a more complete set of features to aid researchers
-                        in Brazil to study writing processes in real-time.</p>
+    <p>
+      Highlights on research interests, orientations, and so on. Academic curriculum also avaliable at:
+    </p>
+    <ul>
+      <li><a href="https://orcid.org/0000-0002-8886-6348" target="_blank">ORCID</a></li>
+      <li><a href="http://lattes.cnpq.br/0881944734241308" target="_blank">Lattes</a></li>
+    </ul>
 
-                        <ul>
-                                <!-- <li>Latest Release</li> -->
-                                <li><a href="https://github.com/glauberrleite/ramos-ink" target="_blank">GitHub</a></li>
-                        </ul>
-                </article>
+    <h3>Research Interests</h3>
+    <ul>
+      <li>Field Robotics</li>
+      <li>Visual Servoing</li>
+      <li>Model Predictive Control</li>
+      <li>Multi-robot cooperation</li>
+    </ul>
 
-                <article>
-                        <h3>Lexicanalytics</h3>
+  </section>
 
-                        <p>Lexicanalytics offers a set of functionalities to help
-                        linguistics researchers with lexical studies, when they are
-                        manipulating and retrieving information from text data.</p>
+  <section id="archive">
 
-                        <ul>
-																<li><a href="https://github.com/glauberrleite/lexicanalytics/releases/download/v2.0/lexicanalytics2.zip">Latest Release</a></li>
-                                <li><a href="https://github.com/glauberrleite/lexicanalytics/releases/download/v1.1/lexicanalytics1.1.zip">Version 1.1</a></li>
-                                <li><a href="https://github.com/glauberrleite/lexicanalytics" target="_blank">GitHub</a></li>
-                        </ul>
-                </article>
+    <!-- Blogging using Jekyll -->
+    <div class="home">
+      <h2 class="page-heading">Blog Archive</h2>
+      <ul class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <span class="post-meta">({{ post.date | date: "%Y-%m-%d" }}) <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
 
-        </section>
-
-        <section id="archive">
-
-                <!-- Blogging using Jekyll -->
-                <div class="home">
-                        <h2 class="page-heading">Blog Archive</h2>
-
-                        <ul class="post-list">
-                        {% for post in site.posts %}
-                        <li>
-                                <span class="post-meta">({{ post.date | date: "%Y-%m-%d" }}) <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span>
-                        </li>
-                        {% endfor %}
-                        </ul>
-
-                </div>
-
-
-        </section>
-
-
+  </section>
         <!--<section id="affiliations">
 
                 <h2>Affiliations</h2>
@@ -197,24 +242,6 @@ leadingpath: ./
 
         </section>-->
 
-        <section id="contact">
-
-                <h2>Contact</h2>
-
-                        <p>Email</p>
-                        <ul>
-                        <li><a href="mailto:glauber@ic.ufal.br">glauber@ic.ufal.br</a></li>
-                        </ul>
-
-                        <p>Network Profiles</p>
-                        <ul>
-                        <li><a href="https://github.com/glauberrleite" target="_blank">GitHub</a></li>
-                        <li><a href="https://www.youtube.com/channel/UCfVvgIezXY7WVvIdCqLU13w" target="_blank">Youtube Channel</a></li>
-                        <li><a href="https://br.linkedin.com/in/glauber-rodrigues-leite-b3795752" target="_blank">LinkedIn</a></li>
-                        </ul>
-
-        </section>
-
-        <div id="bottom-terminal"></div>
+  <div id="bottom-terminal"></div>
 
 </main>
