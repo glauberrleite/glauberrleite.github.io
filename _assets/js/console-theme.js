@@ -81,15 +81,15 @@ for(i = 0; i < navItem.length; i++){
         var loopTimer;
  
         var itemName = this.innerHTML;
-        
-	var id = this.href.split("#")[1];
+
+	      var id = this.href.split("#")[1];
 
         var content = document.getElementById(id);
 
         terminal.innerHTML = bashInfo(path);                
         animatedText = "cd ~/" + itemName;
         textArray = animatedText.split("");
-                            
+
         var terminalWriter = function(nextFunction) {
 
             if(textArray.length > 0) {
