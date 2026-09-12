@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1º Ano do Alef · 10/10/2026</title>
+  <meta name="description" content="Vem aí o 1º ano do Alef! Dia 10 de outubro de 2026, às 18h30, no Buffet Planeta Mágico, Maceió.">
+  <meta name="theme-color" content="#f68421">
+
+  <meta property="og:title" content="1º Ano do Alef">
+  <meta property="og:description" content="10 de outubro de 2026 · 18h30 · Buffet Planeta Mágico, Maceió">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/tema/save-the-date.jpg">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦁</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVEGAÇÃO ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#inicio" class="nav__brand" aria-label="Início">
+        <span class="nav__brand-emoji">🦁</span>
+        <span class="nav__brand-text">Alef <small>1 ano</small></span>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav__menu" id="navMenu">
+        <a href="#festa">A festa</a>
+        <a href="#meses">Mês a mês</a>
+        <a href="#presentes">Presentes</a>
+        <a href="#local">Como chegar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== CAPA ===== -->
+    <section class="hero" id="inicio">
+      <picture>
+        <source media="(min-width: 760px) and (min-aspect-ratio: 1/1)" srcset="img/hero-wide.jpg">
+        <img class="hero__photo" src="img/hero.jpg" alt="Alef sorrindo" fetchpriority="high">
+      </picture>
+      <div class="hero__overlay"></div>
+      <div class="hero__confetti" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <div class="hero__top">
+        <p class="hero__kicker">Vem aí o</p>
+        <h1 class="hero__title">
+          <span class="c-orange">1º</span>
+          <span class="c-green">A</span><span class="c-blue">N</span><span class="c-yellow">O</span>
+          <span class="hero__title-do">do</span>
+          <span class="hero__title-name">
+            <span class="c-green">A</span><span class="c-yellow">L</span><span class="c-orange">E</span><span class="c-blue">F</span>
+          </span>
+        </h1>
+        </div>
+
+        <div class="hero__bottom">
+        <div class="hero__info">
+          <div class="hero__info-item">
+            <span class="hero__info-icon">📅</span>
+            <span><strong>10 de outubro</strong> de 2026<br><small>sábado</small></span>
+          </div>
+          <div class="hero__info-item">
+            <span class="hero__info-icon">🕡</span>
+            <span><strong>18h30</strong><br><small>hora de chegar</small></span>
+          </div>
+          <div class="hero__info-item">
+            <span class="hero__info-icon">📍</span>
+            <span><strong>Buffet Planeta Mágico</strong><br><small>Maceió · AL</small></span>
+          </div>
+        </div>
+
+        <div class="hero__actions">
+          <a class="btn btn--orange" href="alef-1-ano.ics" download="Aniversario-1-Ano-do-Alef.ics">📆 Salvar na agenda</a>
+          <a class="btn btn--blue" href="https://maps.app.goo.gl/1gCyGR6yMZckhenv7?g_st=in" target="_blank" rel="noopener">🗺️ Como chegar</a>
+        </div>
+
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div class="countdown__box"><span id="cdDays">--</span><small>dias</small></div>
+          <div class="countdown__box"><span id="cdHours">--</span><small>horas</small></div>
+          <div class="countdown__box"><span id="cdMin">--</span><small>min</small></div>
+          <div class="countdown__box"><span id="cdSec">--</span><small>seg</small></div>
+        </div>
+        </div>
+      </div>
+
+      <a href="#festa" class="hero__scroll" aria-label="Rolar para baixo">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ===== A FESTA ===== -->
+    <section class="section section--stripes" id="festa">
+      <div class="container">
+        <h2 class="section__title">A festa</h2>
+        <p class="section__lead">
+          A bandinha já está afinando os instrumentos e só falta você para deixar
+          a festa do Alef ainda mais animada! 🎶
+        </p>
+
+        <div class="cards">
+          <article class="card card--orange">
+            <div class="card__icon">📅</div>
+            <h3>Quando</h3>
+            <p class="card__big">10/10/2026</p>
+            <p>Sábado, às <strong>18h30</strong></p>
+            <a class="btn btn--sm btn--orange" href="alef-1-ano.ics" download="Aniversario-1-Ano-do-Alef.ics">Adicionar ao calendário</a>
+          </article>
+
+          <article class="card card--blue">
+            <div class="card__icon">📍</div>
+            <h3>Onde</h3>
+            <p class="card__big">Buffet Planeta Mágico</p>
+            <p>Rua Doutor Alfredo Oiticica, 83<br>Pitanguinha · Maceió/AL</p>
+            <a class="btn btn--sm btn--blue" href="https://maps.app.goo.gl/1gCyGR6yMZckhenv7?g_st=in" target="_blank" rel="noopener">Abrir no Maps</a>
+          </article>
+
+          <article class="card card--green">
+            <div class="card__icon">🎈</div>
+            <h3>Tema</h3>
+            <p class="card__big">Bandinha dos bichinhos</p>
+            <p>Leão, girafa, elefante, urso e cia. tocando juntos pra celebrar o primeiro ano do nosso pequeno.</p>
+          </article>
+        </div>
+
+        <figure class="band">
+          <img src="img/tema/banda.jpg" alt="Bandinha de bichinhos músicos: girafa, cachorro, leão, urso e elefante" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== MÊS A MÊS ===== -->
+    <section class="section section--dots" id="meses">
+      <div class="container">
+        <h2 class="section__title">Alef mês a mês</h2>
+        <p class="section__lead">
+          Um ano inteiro de sorrisos. Toque nas fotos pra ver de pertinho. 💛
+        </p>
+
+        <div class="timeline" id="timeline">
+          <!-- preenchido por js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRESENTES ===== -->
+    <section class="section section--stripes" id="presentes">
+      <div class="container">
+        <h2 class="section__title">Sugestões de presentes</h2>
+        <p class="section__lead">
+          O melhor presente é a sua presença! Mas, se quiser mimar o Alef,
+          separamos algumas ideias que ele vai adorar. 🎁
+        </p>
+
+        <div class="gifts" id="gifts"></div>
+      </div>
+      <img class="mascot mascot--croc" src="img/tema/jacare.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="mascot mascot--koala" src="img/tema/coala.jpg" alt="" aria-hidden="true" loading="lazy">
+    </section>
+
+    <!-- ===== LOCAL ===== -->
+    <section class="section" id="local">
+      <div class="container">
+        <h2 class="section__title">Como chegar</h2>
+        <p class="section__lead">
+          Buffet Planeta Mágico · Rua Doutor Alfredo Oiticica, 83, Pitanguinha · Maceió/AL · 57052-230
+        </p>
+        <div class="map">
+          <iframe
+            title="Mapa do Buffet Planeta Mágico"
+            src="https://www.google.com/maps?q=-9.638803,-35.734923&z=16&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+        <div class="hero__actions hero__actions--center">
+          <a class="btn btn--blue" href="https://maps.app.goo.gl/1gCyGR6yMZckhenv7?g_st=in" target="_blank" rel="noopener">🗺️ Abrir no Google Maps</a>
+          <a class="btn btn--green" href="https://waze.com/ul?ll=-9.638803,-35.734923&navigate=yes" target="_blank" rel="noopener">🚗 Abrir no Waze</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <img src="img/tema/leao-teclado.jpg" alt="Leãozinho tocando teclado" class="footer__lion" loading="lazy">
+    <p class="footer__title">Esperamos você! 🎉</p>
+    <p class="footer__sub">Com carinho, papai e mamãe do Alef</p>
+    <p class="footer__date">10 · 10 · 2026</p>
+  </footer>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox__close" id="lbClose" aria-label="Fechar">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Anterior">‹</button>
+    <figure class="lightbox__figure">
+      <img id="lbImg" src="" alt="">
+      <figcaption id="lbCaption"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Próxima">›</button>
+  </div>
+
+  <script src="js/presentes.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
