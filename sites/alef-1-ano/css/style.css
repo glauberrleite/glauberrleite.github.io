@@ -58,6 +58,12 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; margin: 0; colo
 .c-green  { color: var(--green); }
 .c-yellow { color: var(--yellow); }
 
+/* ---------- Ícone de calendário (SVG) ---------- */
+.ico-cal { display: inline-block; vertical-align: middle; flex: none; }
+.ico-cal--sm { width: 1.35em; height: 1.35em; }
+.ico-cal--md { width: 1.75rem; height: 1.75rem; }
+.ico-cal--lg { width: 2.6rem; height: 2.6rem; filter: drop-shadow(0 3px 6px rgba(107,74,43,.2)); }
+
 /* ---------- Botões ---------- */
 .btn {
   display: inline-flex; align-items: center; gap: .5rem;

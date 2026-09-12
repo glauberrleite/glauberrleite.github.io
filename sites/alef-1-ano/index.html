@@ -22,6 +22,19 @@
 </head>
 <body>
 
+  <!-- ícone de calendário com a data da festa (o emoji 📅 mostra "17 jul" em iPhone/Mac) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="ico-cal" viewBox="0 0 64 64">
+      <rect x="4" y="10" width="56" height="50" rx="10" fill="#fff"/>
+      <path d="M4 20a10 10 0 0 1 10-10h36a10 10 0 0 1 10 10v8H4z" fill="#f68421"/>
+      <rect x="4" y="10" width="56" height="50" rx="10" fill="none" stroke="#6b4a2b" stroke-width="3"/>
+      <rect x="16" y="3" width="6" height="14" rx="3" fill="#6b4a2b"/>
+      <rect x="42" y="3" width="6" height="14" rx="3" fill="#6b4a2b"/>
+      <text x="32" y="45" text-anchor="middle" font-family="Fredoka, Nunito, Arial, sans-serif" font-weight="700" font-size="21" fill="#6b4a2b">10</text>
+      <text x="32" y="56" text-anchor="middle" font-family="Fredoka, Nunito, Arial, sans-serif" font-weight="600" font-size="9" letter-spacing="1" fill="#f68421">OUT</text>
+    </symbol>
+  </svg>
+
   <!-- ===== NAVEGAÇÃO ===== -->
   <header class="nav" id="nav">
     <div class="nav__inner">
@@ -34,8 +47,8 @@
       </button>
       <nav class="nav__menu" id="navMenu">
         <a href="#festa">A festa</a>
-        <a href="#meses">Mês a mês</a>
         <a href="#presentes">Presentes</a>
+        <a href="#meses">Mês a mês</a>
         <a href="#local">Como chegar</a>
       </nav>
     </div>
@@ -68,7 +81,7 @@
         <div class="hero__bottom">
         <div class="hero__info">
           <div class="hero__info-item">
-            <span class="hero__info-icon">📅</span>
+            <span class="hero__info-icon"><svg class="ico-cal ico-cal--md" aria-hidden="true"><use href="#ico-cal"/></svg></span>
             <span><strong>10 de outubro</strong> de 2026<br><small>sábado</small></span>
           </div>
           <div class="hero__info-item">
@@ -82,7 +95,7 @@
         </div>
 
         <div class="hero__actions">
-          <a class="btn btn--orange" href="alef-1-ano.ics" download="Aniversario-1-Ano-do-Alef.ics">📆 Salvar na agenda</a>
+          <a class="btn btn--orange" href="alef-1-ano.ics" download="Aniversario-1-Ano-do-Alef.ics"><svg class="ico-cal ico-cal--sm" aria-hidden="true"><use href="#ico-cal"/></svg> Salvar na agenda</a>
           <a class="btn btn--blue" href="https://maps.app.goo.gl/1gCyGR6yMZckhenv7?g_st=in" target="_blank" rel="noopener">🗺️ Como chegar</a>
         </div>
 
@@ -111,7 +124,7 @@
 
         <div class="cards">
           <article class="card card--orange">
-            <div class="card__icon">📅</div>
+            <div class="card__icon"><svg class="ico-cal ico-cal--lg" aria-hidden="true"><use href="#ico-cal"/></svg></div>
             <h3>Quando</h3>
             <p class="card__big">10/10/2026</p>
             <p>Sábado, às <strong>18h30</strong></p>
@@ -140,22 +153,8 @@
       </div>
     </section>
 
-    <!-- ===== MÊS A MÊS ===== -->
-    <section class="section section--dots" id="meses">
-      <div class="container">
-        <h2 class="section__title">Alef mês a mês</h2>
-        <p class="section__lead">
-          Um ano inteiro de sorrisos. Toque nas fotos pra ver de pertinho. 💛
-        </p>
-
-        <div class="timeline" id="timeline">
-          <!-- preenchido por js/main.js -->
-        </div>
-      </div>
-    </section>
-
     <!-- ===== PRESENTES ===== -->
-    <section class="section section--stripes" id="presentes">
+    <section class="section section--dots" id="presentes">
       <div class="container">
         <h2 class="section__title">Sugestões de presentes</h2>
         <p class="section__lead">
@@ -166,6 +165,20 @@
       </div>
       <img class="mascot mascot--croc" src="img/tema/jacare.jpg" alt="" aria-hidden="true" loading="lazy">
       <img class="mascot mascot--koala" src="img/tema/coala.jpg" alt="" aria-hidden="true" loading="lazy">
+    </section>
+
+    <!-- ===== MÊS A MÊS ===== -->
+    <section class="section section--stripes" id="meses">
+      <div class="container">
+        <h2 class="section__title">Alef mês a mês</h2>
+        <p class="section__lead">
+          Um ano inteiro de sorrisos. Toque nas fotos pra ver de pertinho. 💛
+        </p>
+
+        <div class="timeline" id="timeline">
+          <!-- preenchido por js/main.js -->
+        </div>
+      </div>
     </section>
 
     <!-- ===== LOCAL ===== -->
