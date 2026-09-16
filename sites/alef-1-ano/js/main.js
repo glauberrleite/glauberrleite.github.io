@@ -222,49 +222,76 @@
     return a;
   }
 
-  function renderGifts({ intro, items }) {
+  function giftItemHtml(it, i) {
+    const fallbackIcons = ['🎁', '🧸', '🎈', '🪀', '🧩'];
+    const icon = it.emoji || fallbackIcons[i % fallbackIcons.length];
+    const name = escapeHtml(it.name);
+    if (it.bought) {
+      return `<li class="gift gift--bought" aria-label="${name} (já comprado)">
+               <span class="gift__icon">${icon}</span>
+               <span class="gift__name"><s>${name}</s></span>
+               <span class="gift__cta gift__cta--bought">Já comprado ✓</span>
+             </li>`;
+    }
+    return it.link
+      ? `<li class="gift"><a class="gift__link" href="${escapeHtml(it.link)}" target="_blank" rel="noopener">
+               <span class="gift__icon">${icon}</span>
+               <span class="gift__name">${name}</span>
+               <span class="gift__cta">Ver sugestão ↗</span>
+             </a></li>`
+      : `<li class="gift gift--nolink">
+               <span class="gift__icon">${icon}</span>
+               <span class="gift__name">${name}</span>
+             </li>`;
+  }
+
+  // ordem aleatória a cada visita; os já comprados vão pro fim
+  function orderItems(list) {
+    return shuffle(list.filter((it) => !it.bought)).concat(shuffle(list.filter((it) => it.bought)));
+  }
+
+  function renderGifts({ intro, items, groups }) {
     let html = '';
     if (intro.length) {
       html += `<div class="gifts__intro">${intro.map((p) => `<p>${inlineMd(escapeHtml(p))}</p>`).join('')}</div>`;
     }
     if (!items.length) {
       html += '<p class="gifts__empty">Ainda não temos sugestões cadastradas, mas a sua presença já é o melhor presente! 💛</p>';
-    } else {
-      const fallbackIcons = ['🎁', '🧸', '🎈', '🪀', '🧩'];
-      // ordem aleatória a cada visita; os já comprados vão pro fim
-      const ordered = shuffle(items.filter((it) => !it.bought)).concat(shuffle(items.filter((it) => it.bought)));
-      html += '<ul class="gifts__list">';
-      ordered.forEach((it, i) => {
-        const icon = it.emoji || fallbackIcons[i % fallbackIcons.length];
-        const name = escapeHtml(it.name);
-        if (it.bought) {
-          html += `<li class="gift gift--bought" aria-label="${name} (já comprado)">
-               <span class="gift__icon">${icon}</span>
-               <span class="gift__name"><s>${name}</s></span>
-               <span class="gift__cta gift__cta--bought">Já comprado ✓</span>
-             </li>`;
-          return;
-        }
-        html += it.link
-          ? `<li class="gift"><a class="gift__link" href="${escapeHtml(it.link)}" target="_blank" rel="noopener">
-               <span class="gift__icon">${icon}</span>
-               <span class="gift__name">${name}</span>
-               <span class="gift__cta">Ver sugestão ↗</span>
-             </a></li>`
-          : `<li class="gift gift--nolink">
-               <span class="gift__icon">${icon}</span>
-               <span class="gift__name">${name}</span>
-             </li>`;
-      });
-      html += '</ul>';
+      gifts.innerHTML = html;
+      return;
     }
+
+    // uma coluna por grupo; o que sobrar (grupo vazio ou desconhecido) vira uma coluna sem título
+    const cols = groups
+      .map((g) => ({ title: g.title, emoji: g.emoji, list: items.filter((it) => it.group === g.id) }))
+      .filter((c) => c.list.length);
+    const known = new Set(groups.map((g) => g.id));
+    const rest = items.filter((it) => !known.has(it.group));
+    if (rest.length) cols.push({ title: '', emoji: '', list: rest });
+
+    html += '<div class="gifts__cols">';
+    cols.forEach((col) => {
+      html += '<section class="gifts__col">';
+      if (col.title) {
+        html += `<h3 class="gifts__col-title">${col.emoji ? `<span aria-hidden="true">${col.emoji}</span> ` : ''}${escapeHtml(col.title)}</h3>`;
+      }
+      html += '<ul class="gifts__list">';
+      orderItems(col.list).forEach((it, i) => { html += giftItemHtml(it, i); });
+      html += '</ul></section>';
+    });
+    html += '</div>';
+
     gifts.innerHTML = html;
   }
 
   renderGifts({
     intro: typeof GIFTS_INTRO !== 'undefined' ? GIFTS_INTRO : [],
+    groups: (typeof GIFTS_GROUPS !== 'undefined' ? GIFTS_GROUPS : []).map((g) => ({
+      id: g.id || '', title: g.titulo || '', emoji: (g.emoji || '').trim(),
+    })).filter((g) => g.id),
     items: (typeof GIFTS !== 'undefined' ? GIFTS : []).map((g) => ({
-      name: g.nome || '', emoji: (g.emoji || '').trim(), link: /^https?:\/\//i.test(g.link || '') ? g.link : '', bought: !!g.comprado,
+      name: g.nome || '', emoji: (g.emoji || '').trim(), group: g.grupo || '',
+      link: /^https?:\/\//i.test(g.link || '') ? g.link : '', bought: !!g.comprado,
     })).filter((g) => g.name),
   });
 })();

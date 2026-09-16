@@ -26,11 +26,13 @@ A lista é estática e fica em `js/presentes.js`, uma entrada por presente:
 
 ```js
 const GIFTS = [
-  { nome: "Piano infantil", emoji: "🎹", link: "https://loja.com/piano", comprado: false },
-  { nome: "Bicicleta", emoji: "🚲", link: "https://loja.com/bike", comprado: true },
-  { nome: "Roupinha tamanho 2 anos", emoji: "👕", link: "", comprado: false },
+  { nome: "Piano infantil", emoji: "🎹", grupo: "brinquedos", link: "", comprado: false },
+  { nome: "Bicicleta", emoji: "🚲", grupo: "brinquedos", link: "", comprado: true },
+  { nome: "Roupinha tamanho 2 anos", emoji: "👕", grupo: "roupas", link: "", comprado: false },
 ];
 ```
+
+- `grupo` define em qual das três colunas o item aparece. As colunas ficam em `GIFTS_GROUPS`, no mesmo arquivo: `roupas`, `calcados` e `brinquedos`. Item sem grupo (ou com grupo desconhecido) aparece numa coluna extra, sem título.
 
 - `emoji` é o ícone mostrado ao lado do nome (se faltar, o site usa um ícone genérico).
 - `comprado: true` deixa o item tachado, sem link, e o envia para o fim da lista.
