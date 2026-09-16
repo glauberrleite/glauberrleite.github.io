@@ -10,20 +10,16 @@
 
 // Texto de introdução exibido acima da lista (uma frase por item)
 const GIFTS_INTRO = [
-  "Sugestões pensadas para a fase de descobertas do Alef: brinquedos musicais, livrinhos e coisas pra brincar no chão. 🎶",
+  "Sugestões pensadas para a fase de descobertas do Alef (mas não precisa se limitar à lista): brinquedos musicais, livrinhos e coisas pra brincar no chão. 🎶",
   "Alef está crescendo bastante, se for comprar uma roupinha, sugerimos que seja de 2 anos.",
 ];
 
 const GIFTS = [
-  { nome: "Quadricicíclo", emoji: "🏍️", link: "https://www.mercadolivre.com.br/motoca-spider-maral-infantil-passeio-e-pedal-vermelho-azul/p/MLB21095227#polycard_client=recommendations_pdp-p2p&reco_backend=ranker_compl_marketplace&reco_model=rk_ctr_v1_retsys_comple_tpt&reco_client=pdp-p2p&reco_item_pos=4&reco_backend_type=low_level&reco_id=8b7949e7-f16d-488a-8ac9-d40f7883e2d1&wid=MLB4478225759&sid=recos", comprado: false },
-  { nome: "Laptop", emoji: "💻", link: "https://www.amazon.com.br/Fisher-Price-Aprender-Brincar-Aprendizagem-Multicolorido/dp/B09T75PLY5/ref=sr_1_49_sspa?crid=142UJH049L2V4&dib=eyJ2IjoiMSJ9.kNK7vyjUKkzTUjwvDTB_-pJd8O0rJ5Z3PJzknnvhNvGHxaopEsqNUXgH_w-D66viWVI7NFkqD5d2vi53g7r42bN7olk95VSUBkM_oaV0VVY.H6qxK8NbAtJpglYf84-WJZxJCGJ3tp54FPUJDNMwxXc&dib_tag=se&keywords=brinquedos+fisher+price+1+ano&qid=1788955544&sprefix=brinquedos+f%2Caps%2C343&sr=8-49-spons&ufe=app_do%3Aamzn1.fos.2cac4462-e4ae-4f90-bce2-96d9085be8be&xpid=dUUGjsDPgOIkk&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGZfbmV4dA&psc=1", comprado: false },
-  { nome: "Tartaruguinha", emoji: "🐢", link: "https://www.amazon.com.br/Fisher-Price-Empurra-Tartaruga-Mattel-Multicor/dp/B00BWKNOGE/ref=sr_1_117_sspa?crid=142UJH049L2V4&dib=eyJ2IjoiMSJ9.II9VDxYwFvCG3K8bz65JrnkiSu6C7yzDTXNhqz8NM_4Z5zyZGqsHWOBJJ5dPN8Uwsak0ROlXlHCqq_Uulizjxe_-lRVq52XyeCDAqHEwsKpaoLHaV7fAncMCwo_ZjFGnJSqn4buLhtVWbeNbse7eIJ8qIfNjnatu73IyR79hYgwffYR-FKK7V7ppolre7o9hyn05T4ypHW3b3Ttd0xoKW1FI97JLNW56ewuJMYW7AZgK05WM7GRRXrL3yht2vNI8qqziA4J9qE1G9LxfxRG5VCrpmj4t5089_0N419NT-TM.cGemsmGJ_yodGWztbjXhqByo1hxFWdnCucBi_BpclUM&dib_tag=se&keywords=brinquedos+fisher+price+1+ano&qid=1788955634&sprefix=brinquedos+f%2Caps%2C343&sr=8-117-spons&ufe=app_do%3Aamzn1.fos.ada3c51e-29ed-4c43-bd2b-e9d26b6ec883&xpid=dUUGjsDPgOIkk&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&psc=1", comprado: false },
-  { nome: "Bicicleta Bebe azul", emoji: "🚲", link: "https://www.amazon.com.br/Buba-Bicicleta-Equil%C3%ADbrio-Rodas-Verde/dp/B08YP163DD/ref=sr_1_5?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=DJK39JBM0GO&dib=eyJ2IjoiMSJ9.Os8RKvDuuRGkeKMcNxbFwuACPRMqcXHwLtyVG54txhsjfZUM9ccRVX5DpEohOdiEJJ1JISqhgJGdaq-iJaHxvsgXGsQ9UcHw5ZxukvK29gZPmcX83Bvp0bw1MoH7gWDmeoA2ZczmzKBcfGOjVSPUjdv5H5nCU4d4XY-Jd5mBenl0hDiQ7NCv2VqKxa_OBXlLIobxC4PrPE4yo6ivGatebDp5vQ3moYDxOloLpbJbsafoy2OxW4GmzOpLEs9qBwsMEBUvxYVc2eyFEvUhfPSqJ3o3dNAtw6q2Xf1kjvkH6ic.0-YV9tqKBmE68aXcjpfl9hpoALxedahSu2dfvneIOe8&dib_tag=se&keywords=bicicleta%252Bbebe&qid=1788956012&sprefix=bicicleta%252Bbebe%252Caps%252C308&sr=8-5&ufe=app_do%253Aamzn1.fos.db68964d-7c0e-4bb2-a95c-e5cb9e32eb12&th=1", comprado: true },
-  { nome: "Coleção de livros com som", emoji: "📖", link: "https://www.amazon.com.br/Mundo-sons-Um-dia-Fazenda/dp/6585774329/ref=sr_1_12?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1I70YX5HM5X14&dib=eyJ2IjoiMSJ9.hIvrxUoJENF17PW_n1NNP-6LEl1h6e_KUMV0M_ZvrlySwqGPgwp0Xphn6GNBf70RzlO1kuEC61wl7HTZearUxnEDkOODnSaaMhtC2SayXd4G1qRs5Wr3zzXmYlFN3RILjyE1j1WRbahRoZaSI8s-YTIzZwYBB2MMCDlRTSwNxnSg2HWa_xHrQyd_6Zc5R7DfeB4wjYjgaAxg6sFjVWi-U77J_F9XhQ6qCo6Jzk1TjAgyG0ku_sB_m3lg5KMVH3Ure2zWH_fNJ_Q239SbB20kMhAcvHTdVwI-vfvFbuJmCfI.3kVYqHo3JwHZG3LpBpMbtVhP0KoEfdVTjI3MeuVhr2I&dib_tag=se&keywords=livro+com+som&qid=1788956196&sprefix=livro+com+som%252Caps%252C338&sr=8-12&ufe=app_do%253Aamzn1.fos.2fb4d624-b7be-441e-af6d-3c953cfae5bf", comprado: false },
-  { nome: "Brinquedo de praia", emoji: "🏖️", link: "https://www.mercadolivre.com.br/carriola-de-praia-infantil-laranja-com-acessorios-infantil-castelinho-de-areia-forminhas-baldinho-regador/p/MLB76533636#polycard_client=search_best-seller&tracking_id=301a8d93-18c8-4dd7-8bf7-f1ce1359b365&wid=MLB7359251200&sid=search", comprado: false },
-  { nome: "Jacaré Martelo", emoji: "🐊", link: "https://www.amazon.com.br/Brinquedo-Sensorial-Fisher-Price-Crocodilo-Bolinhas/dp/B0G27FFHKT/ref=sr_1_53?crid=21RUQCQONO1VE&dib=eyJ2IjoiMSJ9.jLyIJPGPPrg14vsfE6K6g62yfVhCfwOYtQVrZOTB3z4msqDNkzr9NlB4-z8HkPW5sJLOv5nfVSSy41ZBNGjBh4q6GOi_BzDN6p2g4VFyOSslI2S2mn_HTOpmtahv7pNTD_JWbOu9ZtvLHtsnnj2hX0y43FlNSmuSiDtkNC-PlyTAN480Fgtz2E6Xw12CO5hh459x3WRSoLZmSkeWsEl3beOErUq2MVe57kvLdwoYPEjdqe4be726y33NNrM9xGtRPhfctDSN2snngt6iBBpGUtb6piZC_BRF1MiMU2YLuMg.JqHxqEjDrLt0RlYCVtfmdG3ituWXNAEZKjbRdrgFcZ4&dib_tag=se&keywords=fisher+price&qid=1788956659&sprefix=fishe%2Caps%2C306&sr=8-53&ufe=app_do%3Aamzn1.fos.fcd6d665-32ba-4479-9f21-b774e276a678", comprado: false },
-  { nome: "Nave sensorial", emoji: "🚀", link: "https://www.amazon.com.br/Montessori-Brinquedo-Sensorial-Educativo-Infantil/dp/B0HG13LD1B/ref=sr_1_21_sspa?crid=1XHFCYACB4SO8&dib=eyJ2IjoiMSJ9.vWpbhfhQsvfjYNjC4qK2dPMYJi1_lIIQnuBkNLpkVskaLiMaTeLNRdFcfw4kV5BfZG9Ph9M2dQ7IHh8QShslWG3ltO9ZEHDOi-gdudMLmRw5ykPE0ulWUDDt1N3f2D_caWH6G8faulxjQb2PH5puzlHoX9hJBycaV-8onpy8Nxc-bq2ZK2c-8QbnkCuQhU9E0T22iUW2MyOik1hv61ZO0IF5S_yXmIN8QS7xDvFRLGwqh1KyGyYMkIH9JuR3Enh_VhPBTpPUe0xOC-zaT_eWgTX_ojGXPCeWRptfXK189l4.n8AYyxIwbU3ubpeGG4VNU6uEP0NhvxoVOwImRg9QhVo&dib_tag=se&keywords=brinquedo+montessori+1+ano&qid=1788957231&sprefix=brinquedo+mon%2Caps%2C323&sr=8-21-spons&ufe=app_do%3Aamzn1.fos.6a09f7ec-d911-4889-ad70-de8dd83c8a74&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&psc=1", comprado: false },
-  { nome: "Lego BEBE", emoji: "🧩", link: "https://www.amazon.com.br/dp/B0923JM89C/ref=sspa_dk_detail_2?pd_rd_i=B0923JM89C&pd_rd_w=PCDnX&content-id=amzn1.sym.01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_p=01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_r=JTA2KRX95K03BHW7ZWW3&pd_rd_wg=zcJZ9&pd_rd_r=93142bc8-71aa-4eee-930f-84a108e6b26f&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&th=1", comprado: false },
+  { nome: "Quadricíclo", emoji: "🏍️", link: "", comprado: false },
+  { nome: "Bicicleta Bebe azul", emoji: "🚲", link: "", comprado: true },
+  { nome: "Coleção de livros com som", emoji: "📖", link: "", comprado: false },
+  { nome: "Brinquedo de praia", emoji: "🏖️", link: "", comprado: false },
+  { nome: "Lego BEBE", emoji: "🧩", link: "", comprado: false },
   { nome: "Roupa de banho infantil com chapéu - 2 anos", emoji: "🩳", link: "", comprado: false },
   { nome: "Casaco com capuz - 2 anos", emoji: "🧥", link: "", comprado: false },
   { nome: "Conjunto moletom - 2 anos", emoji: "👕", link: "", comprado: false },
@@ -31,9 +27,9 @@ const GIFTS = [
   { nome: "Sandália papete bibi tamanho 21", emoji: "🩴", link: "", comprado: false },
   { nome: "Tênis marrom bibi tamanho 22", emoji: "👟", link: "", comprado: false },
   { nome: "Pijama tamanho 2 anos", emoji: "😴", link: "", comprado: false },
-  { nome: "Bermuda 18 meses a 2 anos", emoji: "🩳", link: "", comprado: false },
-  { nome: "Camiseta sem manga 2 anos", emoji: "🎽", link: "", comprado: false },
-  { nome: "Camisa 2 anos", emoji: "👔", link: "", comprado: false },
-  { nome: "Calça 2 anos", emoji: "👖", link: "", comprado: false },
+  { nome: "Bermuda - 2 anos", emoji: "🩳", link: "", comprado: false },
+  { nome: "Camiseta sem manga - 2 anos", emoji: "🎽", link: "", comprado: false },
+  { nome: "Camisa - 2 anos", emoji: "👔", link: "", comprado: false },
+  { nome: "Calça - 2 anos", emoji: "👖", link: "", comprado: false },
   { nome: "Toalha banho", emoji: "🛁", link: "", comprado: false },
 ];
